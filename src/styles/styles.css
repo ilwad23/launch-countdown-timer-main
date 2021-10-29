@@ -1,4 +1,3 @@
-@i "./app";
 * {
   margin: 0;
   padding: 0;
@@ -7,5 +6,149 @@
   font-family: "Red Hat Text", sans-serif;
   font-style: normal;
   font-weight: bold;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.app .text {
+  font-size: 29px;
+  letter-spacing: 0.1em;
+  padding-top: 133px;
+  color: #ffffff;
+}
+
+.app .bg {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: -111;
+  background: linear-gradient(172.16deg, #1e1d29 6.05%, #261c2d 120.01%);
+}
+
+.app .timer {
+  margin-bottom: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.app .timer .wrapper .card {
+  position: relative;
+  background: #343650;
+  -webkit-box-shadow: 0px 10px 0px #191a24;
+          box-shadow: 0px 10px 0px #191a24;
+  border-radius: 6px;
+  width: 148px;
+  overflow: hidden;
+  height: 140px;
+  margin: 35px;
+}
+
+.app .timer .wrapper .card .flipper {
+  position: absolute;
+  background-color: #191a24;
+  opacity: 0.5;
+  width: 100%;
+  height: 55%;
+}
+
+.app .timer .wrapper .card .animate {
+  -webkit-animation: flip 1s infinite;
+          animation: flip 1s infinite;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+@-webkit-keyframes flip {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+
+@keyframes flip {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+
+.app .timer .wrapper .card .num {
+  padding: 20px;
+  font-size: 77px;
+  line-height: 102px;
+  color: #fb6087;
+  z-index: 1;
+}
+
+.app .timer .wrapper .card .seperator {
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  z-index: 11000;
+}
+
+.app .timer .wrapper h4 {
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.38em;
+  color: #ffffff;
+}
+
+.app .footer {
+  position: relative;
+  width: 100vw;
+  height: 196px;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-image: url("./pattern-hills.svg");
+}
+
+.app .footer .icons .icon {
+  margin-left: 30px;
+  color: #8385a9;
+}
+
+.app .footer .icons .icon:hover {
+  color: #fb6087;
 }
 /*# sourceMappingURL=styles.css.map */
