@@ -1,0 +1,59 @@
+.timer {
+  margin-bottom: 150px;
+  @include flex-center(row);
+  background-color: #fff;
+  .wrapper {
+    .card {
+      position: relative;
+      background: #343650;
+      box-shadow: 0px 10px 0px #191a24;
+      border-radius: 6px;
+      width: 148px;
+      overflow: hidden;
+      height: 140px;
+      margin: 35px;
+      .flipper {
+        position: absolute;
+        background-color: #191a24;
+        opacity: 0.5;
+        width: 100%;
+        height: 55%;
+      }
+      .animate {
+        animation: flip 1s infinite;
+        transform-origin: bottom;
+      }
+      @keyframes flip {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+          transform: rotateX(180deg);
+        }
+      }
+      .num {
+        padding: 20px;
+        font-size: 77px;
+        line-height: 102px;
+        color: #fb6087;
+        z-index: 1;
+      }
+
+      .seperator {
+        position: absolute;
+        top: 50%;
+        left: 0px-4px;
+        z-index: 11000;
+      }
+    }
+
+    h4 {
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: 0.38em;
+      color: #ffffff;
+    }
+  }
+}

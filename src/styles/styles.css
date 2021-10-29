@@ -1,0 +1,11 @@
+@i "./app";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-family: "Red Hat Text", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+/*# sourceMappingURL=styles.css.map */

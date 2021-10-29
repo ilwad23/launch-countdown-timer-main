@@ -1,0 +1,20 @@
+$height: 196px;
+.footer {
+  position: relative;
+  width: 100vw;
+  height: $height;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background-image: url("./pattern-hills.svg");
+  
+  .icons {
+    .icon {
+      margin-left: 30px;
+      color: #8385a9;
+      &:hover {
+        color: #fb6087;
+      }
+    }
+  }
+}

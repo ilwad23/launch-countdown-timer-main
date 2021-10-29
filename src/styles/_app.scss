@@ -1,0 +1,22 @@
+.app {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    @include flex-space-between();
+    text-align: center;
+    .text {
+        font-size: 29px;
+        letter-spacing: 0.1em;
+        padding-top: 133px;
+        color: #ffffff;
+    }
+    .bg {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        z-index: -111;
+        background: linear-gradient(172.16deg, #1e1d29 6.05%, #261c2d 120.01%);
+    }    
+    @import './timer';
+    @import './footer';
+  }

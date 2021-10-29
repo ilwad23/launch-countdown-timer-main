@@ -1,0 +1,24 @@
+// $bg-color: #1E1F29;
+@mixin flex-space-between($dir) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: $dir;
+}
+// $dir:row;
+@mixin flex-center($dir) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $dir;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "Red Hat Text", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@import "./app";

@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
 
 function Timer({ timer }) {
+  const durations = ["86400s", "3600s", "60s", "1s"];
   return (
-    <div>
-      <h1>
-        {timer.map((unit) => (
-          <span>{unit}|</span>
-        ))}
-      </h1>
+    <div className="timer">
+      {timer.map((unit, i) => (
+        <Card unit={unit}/>
+      ))}
     </div>
   );
 }
 
-export default Timer
+export default Timer;
