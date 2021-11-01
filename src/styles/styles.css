@@ -43,7 +43,15 @@
   background: linear-gradient(172.16deg, #1e1d29 6.05%, #261c2d 120.01%);
 }
 
+@media screen and (max-width: 750px) {
+  .app .text {
+    width: 80vw;
+    font-size: 22px;
+  }
+}
+
 .app .timer {
+  margin-top: 50px;
   margin-bottom: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,6 +78,15 @@
   overflow: hidden;
   height: 140px;
   margin: 35px;
+  text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+  .app .timer .wrapper .card {
+    width: 72px;
+    height: 64px;
+    margin: 15px;
+  }
 }
 
 .app .timer .wrapper .card .flipper {
@@ -80,7 +97,7 @@
   height: 55%;
 }
 
-.app .timer .wrapper .card .animate {
+.app .timer .wrapper .card .flip {
   -webkit-animation: flip 1s infinite;
           animation: flip 1s infinite;
   -webkit-transform-origin: bottom;
@@ -88,9 +105,6 @@
 }
 
 @-webkit-keyframes flip {
-  50% {
-    opacity: 1;
-  }
   100% {
     opacity: 1;
     -webkit-transform: rotateX(180deg);
@@ -99,9 +113,6 @@
 }
 
 @keyframes flip {
-  50% {
-    opacity: 1;
-  }
   100% {
     opacity: 1;
     -webkit-transform: rotateX(180deg);
@@ -115,6 +126,13 @@
   line-height: 102px;
   color: #fb6087;
   z-index: 1;
+}
+
+@media screen and (max-width: 750px) {
+  .app .timer .wrapper .card .num {
+    font-size: 33px;
+    line-height: 24px;
+  }
 }
 
 .app .timer .wrapper .card .seperator {
@@ -132,6 +150,12 @@
   color: #ffffff;
 }
 
+@media screen and (max-width: 750px) {
+  .app .timer .wrapper h4 {
+    font-size: 7px;
+  }
+}
+
 .app .footer {
   position: relative;
   width: 100vw;
@@ -143,6 +167,10 @@
   background-image: url("./pattern-hills.svg");
 }
 
+.app .footer .icons {
+  padding-top: 50px;
+}
+
 .app .footer .icons .icon {
   margin-left: 30px;
   color: #8385a9;
@@ -150,5 +178,11 @@
 
 .app .footer .icons .icon:hover {
   color: #fb6087;
+}
+
+@media screen and (max-width: 375px) {
+  .app .footer .icons {
+    padding-top: 20px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

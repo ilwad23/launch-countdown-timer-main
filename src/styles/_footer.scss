@@ -7,13 +7,19 @@ $height: 196px;
   display: grid;
   place-items: center;
   background-image: url("./pattern-hills.svg");
-  
+
   .icons {
+    padding-top: 50px;
     .icon {
       margin-left: 30px;
       color: #8385a9;
       &:hover {
         color: #fb6087;
+      }
+    }
+    @media screen and (max-width: 375px) {
+      & {
+        padding-top: 20px;
       }
     }
   }

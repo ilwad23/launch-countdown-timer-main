@@ -17,6 +17,12 @@
         z-index: -111;
         background: linear-gradient(172.16deg, #1e1d29 6.05%, #261c2d 120.01%);
     }    
+    @media screen and (max-width:750px) {
+        .text {
+            width: 80vw;
+            font-size: 22px;
+        }
+    }
     @import './timer';
     @import './footer';
   }

@@ -11,19 +11,25 @@ function App() {
     }
     return localStorage.getItem("startDate");
   });
+  const [goalDate] = useState(() => {
+    const gDate = new Date(startDate);
+    gDate.setDate(gDate.getDate() + 9);
+    if (!localStorage.getItem("goalDate")) {
+      localStorage.setItem("goalDate", gDate);
+    }
+    return gDate;
+  });
   const [currentDate] = useState(() => {
     if (!localStorage.getItem("currentDate")) {
       return new Date(localStorage.getItem("startDate"));
     }
     let orgDate = new Date(startDate);
-    let newDate = new Date()
-    newDate.setMilliseconds(orgDate.getMilliseconds())
+    let newDate = new Date();
+    newDate.setMilliseconds(orgDate.getMilliseconds());
     return newDate;
   });
 
   const [countDown, setCountDown] = useState(() => {
-    const goalDate = new Date(startDate);
-    goalDate.setDate(goalDate.getDate() + 9);
     let countDown = (goalDate.getTime() - currentDate.getTime()) / 1000 - 3600;
     return countDown;
   });
@@ -71,7 +77,6 @@ function App() {
       <Footer />
     </div>
   );
-
 }
 
 export default App;
