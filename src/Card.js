@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
-function Card({unit}) {
-  const [num, setNum] = useState();
-  // useEffect(() => {})
-  
+import React from "react";
+import Separator from "./images/separator.svg";
+function Card({ unit }) {
   return (
     <div className="card">
-      <div className={`flipper ${true && "flip"}`}></div>
-      <h3 className="num" onChange={() => console.log('work')}>
+      <div className={`card__card__flipper ${true && "card__flip"}`}></div>
+      <h3 className="num" onChange={() => console.log("work")}>
         {unit[0]}
       </h3>
-      <img className="seperator" src="./images/seperator.svg" />
+      <img className="separator" src={Separator} alt="Separator" />
     </div>
   );
 }

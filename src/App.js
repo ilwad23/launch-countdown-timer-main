@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./styles/styles.css";
 import Timer from "./Timer";
 import Footer from "./Footer";
+import BgStars from './images/bg-stars.svg'
 
 function App() {
   const [timer, setTimer] = useState(["00", "00", "00", "00"]);
@@ -72,7 +73,7 @@ function App() {
   return (
     <div className="app">
       <h3 className="text">WE’RE LAUNCHING SOON</h3>
-      <img className="bg" src="./images/bg-stars.svg" />
+      <img className="bg" src={BgStars} alt='background-stars' />
       <Timer timer={timer} />
       <Footer />
     </div>
