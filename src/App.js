@@ -31,11 +31,9 @@ function App() {
     return newDate;
   });
 
-  const [countDown, setCountDown] = useState(() => {
-    let countDown = (goalDate.getTime() - currentDate.getTime()) / 1000 - 3600;
-
-    return countDown;
-  });
+  const [countDown, setCountDown] = useState(
+    (goalDate.getTime() - currentDate.getTime()) / 1000
+  );
 
   useEffect(() => {
     if (countDown > 0) {
@@ -50,14 +48,15 @@ function App() {
       setStartDate(localStorage.setItem("startDate", Date()));
       setGoalDate(() => {
         const gDate = new Date(startDate);
-        gDate.setDate(gDate.getDate() + 1);
+        gDate.setDate(gDate.getDate() + 14);
         localStorage.setItem("goalDate", gDate);
-        console.log({gDate});
+        console.log({ gDate });
         return gDate;
       });
-      window.location.reload(false)
+      setCountDown((goalDate.getTime() - currentDate.getTime()) / 1000 - 3600);
+      window.location.reload(false);
     }
-    setTimer(SecsToDitialTime(countDown));
+    setTimer(SecsToDigitalTime(countDown));
     localStorage.setItem("currentDate", new Date());
   }, [countDown]);
 
@@ -67,7 +66,7 @@ function App() {
     return [converted, seconds];
   }
 
-  function SecsToDitialTime(seconds) {
+  function SecsToDigitalTime(seconds) {
     let res = [
       [86400, "days"],
       [3600, "hours"],
