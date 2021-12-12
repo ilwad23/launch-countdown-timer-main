@@ -19,23 +19,24 @@
         margin: 15px;
       }
 
-      .&__flipper {
+      &__flipper {
         position: absolute;
         background-color: #191a24;
         opacity: 0.5;
         width: 100%;
         height: 55%;
       }
-      .&__flip {
-        animation: &__flip1s infinite;
-        transform-origin: bottom;
-      }
-      @keyframes &__flip {
-        100% {
-          opacity: 1;
-          transform: rotateX(180deg);
-        }
-      }
+      // &__flip {
+      //   animation: flip 59s infinite forwards;
+      //   animation-delay: 3s ;
+      //   transform-origin: bottom;
+      // }
+      // @keyframes flip {
+      //    20%, 100% {
+      //     opacity: 1;
+      //     transform: rotateX(180deg);
+      //   }
+      // }
       .num {
         padding: 20px;
         font-size: 77px;

@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
-import "./styles/styles.css";
+import "./sass/main.scss";
 import Timer from "./Timer";
 import Footer from "./Footer";
-import BgStars from './images/bg-stars.svg'
+import BgStars from "./images/bg-stars.svg";
 
 function App() {
   const [timer, setTimer] = useState(["00", "00", "00", "00"]);
-  const [startDate] = useState(() => {
+  const [startDate, setStartDate] = useState(() => {
     if (!localStorage.getItem("startDate")) {
       localStorage.setItem("startDate", Date());
     }
     return localStorage.getItem("startDate");
   });
-  const [goalDate] = useState(() => {
+  const [goalDate, setGoalDate] = useState(() => {
     const gDate = new Date(startDate);
-    gDate.setDate(gDate.getDate() + 9);
+    gDate.setDate(gDate.getDate() + 14);
     if (!localStorage.getItem("goalDate")) {
       localStorage.setItem("goalDate", gDate);
     }
     return gDate;
   });
+
   const [currentDate] = useState(() => {
     if (!localStorage.getItem("currentDate")) {
       return new Date(localStorage.getItem("startDate"));
@@ -32,6 +33,7 @@ function App() {
 
   const [countDown, setCountDown] = useState(() => {
     let countDown = (goalDate.getTime() - currentDate.getTime()) / 1000 - 3600;
+
     return countDown;
   });
 
@@ -44,6 +46,17 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (countDown < 1) {
+      setStartDate(localStorage.setItem("startDate", Date()));
+      setGoalDate(() => {
+        const gDate = new Date(startDate);
+        gDate.setDate(gDate.getDate() + 1);
+        localStorage.setItem("goalDate", gDate);
+        console.log({gDate});
+        return gDate;
+      });
+      window.location.reload(false)
+    }
     setTimer(SecsToDitialTime(countDown));
     localStorage.setItem("currentDate", new Date());
   }, [countDown]);
@@ -73,7 +86,7 @@ function App() {
   return (
     <div className="app">
       <h3 className="text">WE’RE LAUNCHING SOON</h3>
-      <img className="bg" src={BgStars} alt='background-stars' />
+      <img className="bg" src={BgStars} alt="background-stars" />
       <Timer timer={timer} />
       <Footer />
     </div>
